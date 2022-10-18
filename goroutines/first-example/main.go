@@ -6,9 +6,9 @@ import (
 )
 
 func printSomething(s string, wg *sync.WaitGroup) {
-	fmt.Println(s)
+	defer wg.Done()
 
-	wg.Done()
+	fmt.Println(s)
 }
 
 func main() {
