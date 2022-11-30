@@ -24,5 +24,10 @@ mkdir -p db-data/redis
 docker-compose up -d
 ```
 
+## admin
+email: admin@example.com
+
+password: verysecret
+
 
 # References
