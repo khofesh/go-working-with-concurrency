@@ -20,7 +20,7 @@ func (p *Plan) GetAll() ([]*Plan, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), dbTimeout)
 	defer cancel()
 
-	query := `select id, plan_name, plan_amount created_at, updated_at
+	query := `select id, plan_name, plan_amount, created_at, updated_at
 	from plans order by plan_name`
 
 	rows, err := db.QueryContext(ctx, query)
