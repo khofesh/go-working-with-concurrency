@@ -35,4 +35,13 @@ restart: stop start
 
 ## test: runs all tests
 test:
-	go test -v ./...
+	go test -v ./cmd/...
+
+test-race:
+	go test -race -v ./cmd/...
+
+coverage.out:
+	go test ./cmd/... -coverprofile=coverage.out
+
+test-coverage: coverage.out
+	go tool cover -html=coverage.out
